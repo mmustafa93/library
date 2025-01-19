@@ -34,10 +34,17 @@ const myLibrary = [
 const booksContainer = document.querySelector('.books-container');
 const addNewBook = document.querySelector('#add-new-book');
 const newBook = document.querySelector('#new-book-form');
+const dialog = document.querySelector("dialog");
+const closeButton = document.querySelector("dialog button");
 
 addNewBook.addEventListener('click', () => {
-    newBook.style.display = 'block';
+    dialog.showModal();
 });
+
+// "Close" button closes the dialog
+closeButton.addEventListener("click", () => {
+    dialog.close();
+  });
 
 function renderBooks(){
     myLibrary.forEach(book => {
@@ -78,6 +85,7 @@ newBook.addEventListener('submit', (e) => {
     const haveRead = newBook.querySelector('#have-read').checked;
     booksContainer.innerHTML = ""
     addBookToLibrary(title, author, pages, haveRead);
+    dialog.close();
     renderBooks();
 });
 

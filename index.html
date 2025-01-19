@@ -11,17 +11,21 @@
         <h1>Fyodor Mikhailovich Dostoevsky's Books</h1>
         <p>Help us complete this list!</p>
         <button type="button" id="add-new-book">Add New book</button>
-        <form id="new-book-form">
-            <label for="book-title">Book Title: </label>
-            <input type="text" id="book-title" placeholder="Book title" required>
-            <label for="author-name">Author: </label>
-            <input type="text" id="author-name" placeholder="Author" required>
-            <label for="pages-count">No. of Pages: </label>
-            <input type="number" id="pages-count" placeholder="No of Pages" required>
-            <label for="have-read">Read</label>
-            <input type="checkbox" id="have-read" placeholder="Book title">
-            <button type="submit">Add book</button>
-        </form>
+        <dialog>
+            <button autofocus>Close</button>
+            <form id="new-book-form">
+                <label for="book-title">Book Title: </label>
+                <input type="text" id="book-title" placeholder="Book title" required>
+                <label for="author-name">Author: </label>
+                <input type="text" id="author-name" placeholder="Author" required>
+                <label for="pages-count">No. of Pages: </label>
+                <input type="number" id="pages-count" placeholder="No of Pages" required>
+                <label for="have-read">Read</label>
+                <input type="checkbox" id="have-read" placeholder="Book title">
+                <button type="submit">Add book</button>
+            </form>
+        </dialog>
+        
         <section class="books-container">
         </section>
     </main>
