@@ -41,7 +41,6 @@ addNewBook.addEventListener('click', () => {
     dialog.showModal();
 });
 
-// "Close" button closes the dialog
 closeButton.addEventListener("click", () => {
     dialog.close();
   });
@@ -60,7 +59,6 @@ function renderBooks(){
         booksContainer.appendChild(bookCard);
     })
 
-    // Add event listeners for "Remove" and "Read Status" buttons
     document.querySelectorAll('.remove-book').forEach(button => {
         button.addEventListener('click', (e) => {
             e.target.parentElement.remove();
@@ -87,9 +85,9 @@ newBook.addEventListener('submit', (e) => {
     addBookToLibrary(title, author, pages, haveRead);
     dialog.close();
     renderBooks();
+    newBook.reset();
 });
 
-// Constructor function for Book
 function Book(title, author, pages, haveRead) {
     this.title = title;
     this.author = author;

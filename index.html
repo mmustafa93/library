@@ -8,11 +8,13 @@
 </head>
 <body>
     <main>
-        <h1>Fyodor Mikhailovich Dostoevsky's Books</h1>
-        <p>Help us complete this list!</p>
-        <button type="button" id="add-new-book">Add New book</button>
+        <h1 class="center">Fyodor Mikhailovich Dostoevsky's Library</h1>
+        <img src="assets/Dostoevsky.jpg" alt="Portrait of Dostoevsky">
+        <p>Fyodor Mikhailovich Dostoevsky, was a Russian novelist, short story writer, essayist and journalist. Numerous literary critics regard him as one of the greatest novelists in all of world literature, as many of his works are considered highly influential masterpieces.</p>
+        <p class="center">Help us complete this list!</p>
+        <button class="new-book-btn" type="button" id="add-new-book">Add New book</button>
         <dialog>
-            <button autofocus>Close</button>
+            <button autofocus>x</button>
             <form id="new-book-form">
                 <label for="book-title">Book Title: </label>
                 <input type="text" id="book-title" placeholder="Book title" required>
@@ -20,12 +22,13 @@
                 <input type="text" id="author-name" placeholder="Author" required>
                 <label for="pages-count">No. of Pages: </label>
                 <input type="number" id="pages-count" placeholder="No of Pages" required>
-                <label for="have-read">Read</label>
-                <input type="checkbox" id="have-read" placeholder="Book title">
+                <div class="read-container">
+                    <input type="checkbox" id="have-read">
+                    <label for="have-read" class="read-label">Read</label>
+                </div>
                 <button type="submit">Add book</button>
             </form>
         </dialog>
-        
         <section class="books-container">
         </section>
     </main>
