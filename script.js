@@ -13,6 +13,9 @@ const addNewBookButton = document.querySelector('#add-new-book');
 const newBookForm = document.querySelector('#new-book-form');
 const dialog = document.querySelector('dialog');
 const closeButton = document.querySelector('dialog button');
+const bookTitleElement = document.querySelector('#book-title');
+const bookTitleError = document.querySelector("#book-title + span.error");
+const authorNameElement = document.querySelector('#author-name');
 
 // Event Listeners
 addNewBookButton.addEventListener('click', () => dialog.showModal()); // Open the dialog
@@ -83,6 +86,22 @@ function renderBooks() {
         });
     });
 }
+
+bookTitleElement.addEventListener("input", () => {
+    if (bookTitleElement.value.trim() === "") {
+      bookTitleElement.setCustomValidity("You must enter the book title!");
+    } else {
+      bookTitleElement.setCustomValidity("");
+    }
+  });
+
+newBookForm.addEventListener("submit", (event) => {
+    if (!bookTitleElement.checkValidity()) {
+        bookTitleElement.reportValidity(); // Show custom validation message
+        event.preventDefault(); // Prevent form submission
+      }
+  });
+
 
 // Initial rendering of the library
 renderBooks();

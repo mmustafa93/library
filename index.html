@@ -16,10 +16,16 @@
         <dialog>
             <button autofocus>x</button>
             <form id="new-book-form">
-                <label for="book-title">Book Title: </label>
-                <input type="text" id="book-title" placeholder="Book title" required>
-                <label for="author-name">Author: </label>
-                <input type="text" id="author-name" placeholder="Author" required>
+                <label for="book-title">
+                    <span>Book Title:</span> 
+                    <input type="text" id="book-title" placeholder="Book title" required>
+                    <span class="error" aria-live="polite"></span>
+                </label>
+                <label for="author-name">
+                    <span>Author:</span>
+                    <input type="text" id="author-name" placeholder="Author" required>
+                    <span class="error" aria-live="polite"></span>
+                </label>
                 <label for="pages-count">No. of Pages: </label>
                 <input type="number" id="pages-count" placeholder="No of Pages" required>
                 <div class="read-container">
